@@ -8,6 +8,25 @@ import java.util.List;
 @RestController
 public class AgentController {
 
+    private String name;
+    private String date;
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String string) {
+        date = string;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String string) {
+        name = string;
+    }
+
     //GET
     @GetMapping(value = "test")
     public String run(@RequestParam(value = "id", required = false, defaultValue = "0") Integer id) {

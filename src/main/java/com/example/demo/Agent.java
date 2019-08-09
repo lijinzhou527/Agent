@@ -19,9 +19,6 @@ import java.util.*;
 @Service
 public class Agent {
 
-    private String name;
-    private String date;
-
     private final String CSVPath = "C:\\Users\\sightna-dev\\Desktop\\csv";
 
     private WebDriver driver;
@@ -29,22 +26,6 @@ public class Agent {
     private CsvWriter csvWriter;
 
     private String ExportDate = "";
-
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String string) {
-        date = string;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String string) {
-        name = string;
-    }
 
     private final String driverPath = "C:\\Windows\\System32\\chromedriver.exe";
 
