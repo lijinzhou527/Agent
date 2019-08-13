@@ -1,17 +1,33 @@
 package com.example.demo;
 
-
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+
 @SpringBootApplication
-public class DemoApplication {
-    public static Agent agent = new Agent();
+public class DemoApplication implements CommandLineRunner {
+
+    public static Agent agent;
+
+    public static Agent getAgent() {
+        return agent;
+    }
+
+    @Autowired
+    public void setAgent(Agent a) {
+        DemoApplication.agent = a;
+    }
+
 
     public static void main(String[] args) {
-        agent.run();
         SpringApplication.run(DemoApplication.class, args);
     }
 
 
+    @Override
+    public void run(String... args) throws Exception {
+        agent.run();
+    }
 }

@@ -2,11 +2,15 @@ package com.example.demo;
 
 import com.codeborne.selenide.*;
 import com.csvreader.CsvWriter;
+import com.example.demo.AgentUtil.AgentToolkit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +20,6 @@ import java.util.*;
 
 
 @Component
-@Service
 public class Agent {
 
     private final String CSVPath = "C:\\Users\\sightna-dev\\Desktop\\csv";
@@ -29,11 +32,17 @@ public class Agent {
 
     private final String driverPath = "C:\\Windows\\System32\\chromedriver.exe";
 
+    private static final Logger LOG = LoggerFactory.getLogger(Agent.class);
+
+
     public void run() {
         //agentWebPage();
-        agentWebPageSelenide();
-        exit();
+        //agentWebPageSelenide();
+        //exit();
+        LOG.info("~~~~~~~~~~~RUN APP SUCCESSFULLY!~~~~~~~~~~~");
+
     }
+
 
     public void agentWebPageSelenide() {
         System.setProperty("webdriver.chrome.driver", driverPath);
